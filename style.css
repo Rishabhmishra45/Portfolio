@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+body {
+    background: linear-gradient(120deg, rgb(254, 254, 255), rgb(227, 230, 230));
+}
+
+.header {
+    width: 100%;
+    height: 550px;
+    background: linear-gradient(120deg, rgb(27, 96, 153), rgb(123, 229, 236));
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 50px;
+}
+
+h2 {
+    color: white;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-flex;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffff;
+    font-weight: 550;
+    font-size: 16px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    background: #ffff;
+    bottom: -5px;
+    left: 0;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav .fa-solid{
+    display: none;
+}
+
+/* .......intro section css........ */
+img{
+    width: 500px;
+    height: 500px;
+}
+.intro{
+    width: 80%;
+    background: #ffff;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 6px;
+    position: relative;
+    top: 70px;
+    color: #0000;
+    font-size: 16px;
+    display: flex;
+}
+.header-text{
+    color: black;
+
+}
