@@ -10,27 +10,40 @@
     background: linear-gradient(120deg, rgb(254, 254, 255), rgb(227, 230, 230));
 } */
 
+/* Header section */
 .header {
     width: 100%;
     height: 550px;
     background: linear-gradient(120deg, rgb(27, 96, 153), rgb(123, 229, 236));
 }
 
+/* Navigation bar - Fixed position for scrolling effect */
 nav {
+    position: fixed; /* Makes the navbar stay at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px 50px;
+    background: linear-gradient(120deg, rgb(27, 96, 153), rgb(123, 229, 236)); /* Ensures visibility */
+    z-index: 1000; /* Keeps navbar above other content */
 }
 
-h2 {
+/* Navbar heading */
+nav h2 {
     color: white;
+}
+
+/* Navbar links */
+nav ul {
+    display: flex;
 }
 
 nav ul li {
     list-style: none;
-    display: inline-flex;
     margin: 10px 20px;
 }
 
@@ -42,6 +55,7 @@ nav ul li a {
     position: relative;
 }
 
+/* Navbar underline effect */
 nav ul li a::after {
     content: "";
     width: 0;
@@ -57,8 +71,19 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* Navbar icons (hidden for now) */
 nav .fa-solid {
     display: none;
+}
+
+/* Adjusting padding for other content so it doesn't get hidden behind the fixed navbar */
+.header,
+.intro,
+#about,
+#experience,
+.skills,
+#portfolio {
+    margin-top: 80px; /* Pushes sections below the navbar */
 }
 
 /* .......intro section css........ */
@@ -160,7 +185,7 @@ img {
     font-size: 14px;
 }
 
-.subtitle{
+.subtitle {
     font-size: 30px;
     font-weight: 660;
     margin-bottom: 30px;
@@ -182,7 +207,7 @@ img {
 
 }
 
-.progress{
+.progress {
     background: #e0dddd;
     border-radius: 10px;
 }
@@ -196,15 +221,15 @@ img {
 
 /* ........Experience Section......... */
 
-#experience{
+#experience {
     padding: 40px 20px;
     width: 100%;
     margin-top: 14%;
     text-align: center;
-    background: linear-gradient(120deg, rgb(18, 101, 168), rgb(123, 229, 236));
+    background: linear-gradient(120deg, rgb(18, 101, 168), rgb(123, 229, 236));;
 }
 
-#experience .tab-title button{
+#experience .tab-title button {
     background: #fff;
     padding: 10px 20px;
     border-radius: 10px;
@@ -217,20 +242,237 @@ img {
     margin-left: 12px;
 }
 
-#experience .tab-content ul li{
+#experience .tab-content ul li {
     list-style: none;
     margin: 30px 0;
 
 }
-#experience .tab-content ul li span{
+
+#experience .tab-content ul li span {
     color: #fff;
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 20px;
 }
-#experience-tab{
+
+#experience-tab {
     display: none;
 }
-#experience-tab{
+
+#experience-tab {
     display: block;
+}
+
+
+/* Skills Section */
+.skills {
+    padding: 80px 20px;
+    background: white;
+    /* White background */
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333333;
+    /* Dark text */
+}
+
+.skills p {
+    font-size: 1.1rem;
+    color: #666666;
+    /* Gray text */
+    margin-bottom: 40px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background-color: #f9f9f9;
+    /* Light gray background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333333;
+    /* Dark text */
+}
+
+.skill-card p {
+    font-size: 1rem;
+    color: #666666;
+    /* Gray text */
+}
+
+.skill-progress {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.skill-progress-bar {
+    height: 100%;
+    background-color: #4a90e2;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.skill-card:hover .skill-progress-bar {
+    width: 100%;
+}
+
+
+/* ........Portfolio section css......... */
+
+/* Portfolio Section */
+#portfolio {
+    width: 80%;
+    padding: 50px 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.subtitle {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Work List Grid */
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Work Card */
+.work {
+    position: relative; /* Required for hover effect */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.work:hover {
+    transform: scale(1.05);
+}
+
+.work img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Layer (Hover Effect) */
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(27, 96, 153, 0.9), rgba(123, 229, 236, 0.9));
+    border-radius: 5px;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.work:hover .layer {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Layer Text & Icons */
+.layer h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.layer p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.layer a {
+    background: #ffffff;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.layer a i {
+    color: #d37e0f;
+    font-size: 16px;
+}
+
+.layer a:hover {
+    background: #d37e0f;
+}
+
+.layer a:hover i {
+    color: #ffffff;
+}
+
+/* Button Styles */
+.btn {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn a {
+    text-decoration: none;
+    background: #d37e0f;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn a:hover {
+    background: #4a90e2;
 }
