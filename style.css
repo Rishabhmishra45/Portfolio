@@ -3,12 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    
+
 }
 
-body {
+/* body {
     background: linear-gradient(120deg, rgb(254, 254, 255), rgb(227, 230, 230));
-}
+} */
 
 .header {
     width: 100%;
@@ -57,16 +57,17 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-nav .fa-solid{
+nav .fa-solid {
     display: none;
 }
 
 /* .......intro section css........ */
-img{
+img {
     width: 500px;
     height: 500px;
 }
-.intro{
+
+.intro {
     width: 80%;
     background: #ffff;
     padding: 20px;
@@ -77,8 +78,159 @@ img{
     color: #0000;
     font-size: 16px;
     display: flex;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
-.header-text{
-    color: black;
 
+.header-text {
+    color: black;
+    margin-left: 7%;
+    margin-top: 5%;
+
+
+}
+
+.header-text h1 {
+    font-size: 50px;
+    margin-top: 15px;
+    padding: 10px 0px;
+}
+
+.header-text span {
+    color: orange;
+}
+
+.personal-info {
+    margin: 40px 0;
+}
+
+.personal-info li {
+    list-style: none;
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+.personal-info li i {
+    color: orange;
+    margin-right: 10px;
+}
+
+.btn {
+    margin-top: 40px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: #ffff;
+    background: linear-gradient(120deg, rgb(27, 96, 153), rgb(123, 229, 236));
+    padding: 9px 14px;
+    border-radius: 8px;
+    border: 1px solid orange;
+}
+
+
+/* .........about section.......... */
+#about {
+    position: relative;
+    top: 200px;
+    /* border: 2px solid red; */
+}
+
+.row {
+    width: 90%;
+    margin: 0% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 50%;
+    margin-left: 2%;
+}
+
+.about-col-2 {
+    flex-basis: 40%;
+    margin-left: 2%;
+    margin-top: 40px;
+    padding: 40px 0;
+}
+
+.about-col-2 h4 {
+    font-size: 14px;
+}
+
+.subtitle{
+    font-size: 30px;
+    font-weight: 660;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+
+/* .........progress section........ */
+.skill-main .skill-item .progress-br {
+    margin-top: 10px;
+    border: 1px solid #dddada;
+    padding: 4px;
+    border-radius: 10px;
+
+}
+
+.skill-main .skill-item {
+    margin-bottom: 10px;
+
+}
+
+.progress{
+    background: #e0dddd;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background: linear-gradient(120deg, rgb(27, 96, 153), rgb(123, 229, 236));
+    height: 10px;
+    border-radius: 10px;
+}
+
+
+/* ........Experience Section......... */
+
+#experience{
+    padding: 40px 20px;
+    width: 100%;
+    margin-top: 14%;
+    text-align: center;
+    background: linear-gradient(120deg, rgb(18, 101, 168), rgb(123, 229, 236));
+}
+
+#experience .tab-title button{
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    font-weight: 550;
+    font-size: 15px;
+    margin-left: 12px;
+}
+
+#experience .tab-content ul li{
+    list-style: none;
+    margin: 30px 0;
+
+}
+#experience .tab-content ul li span{
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+#experience-tab{
+    display: none;
+}
+#experience-tab{
+    display: block;
 }
