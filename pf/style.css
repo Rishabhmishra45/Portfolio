@@ -5,19 +5,24 @@
     font-family: sans-serif;
 
 }
+
 html {
     scroll-behavior: smooth;
 }
 
 /* Fix scrolling offset issue */
-section, div[id] {
-    scroll-margin-top: 80px; /* Adjust according to your navbar height */
+section,
+div[id] {
+    scroll-margin-top: 80px;
+    /* Adjust according to your navbar height */
 }
 
-
-body {
+/* body {
     background: linear-gradient(120deg, rgb(254, 254, 255), rgb(227, 230, 230));
-}
+    padding-top: -20px;
+} */
+
+
 
 /* Header section */
 .header {
@@ -37,7 +42,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 12px 50px;
+    padding: 8px 40px;
     background: linear-gradient(120deg, rgb(27, 96, 153), rgb(123, 229, 236));
     /* Ensures visibility */
     z-index: 1000;
@@ -615,3 +620,88 @@ form .btn2 {
     color: #ffff;
     margin: 0 auto;
 }
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro img {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .header-text {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .social-icons {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text h1 {
+        font-size: 36px;
+    }
+
+    .btn a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .skill-logo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+
+

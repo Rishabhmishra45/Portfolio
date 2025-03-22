@@ -14,7 +14,12 @@ edBtn.onclick = function () {
 
 
 
-// .........scorlling Problem code......
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let navHeight = document.querySelector("nav").offsetHeight;
 
@@ -34,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
 // ......form submit aleart....
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form"); // Form select karna
@@ -49,23 +53,3 @@ document.addEventListener("DOMContentLoaded", function () {
         form.submit();
     });
 });
-
-
-
-// // ..........recaptcha...........
-// document.getElementById("contact-form").addEventListener("submit", function(event) {
-//     event.preventDefault();  // Default form submit rokta hai
-
-//     var recaptchaResponse = grecaptcha.getResponse(); // reCAPTCHA response
-
-//     if (!recaptchaResponse) {
-//         alert("Please complete the reCAPTCHA verification.");
-//         return;
-//     }
-
-//     // Agar reCAPTCHA verify ho gaya toh success message dikhaye
-//     alert("Form submitted successfully! ✅");
-
-//     // ✅ Backend ke liye form submit karna ho toh yahan AJAX/FETCH API use karo
-//     this.submit(); // Form submit karega agar backend linked ho
-// });
