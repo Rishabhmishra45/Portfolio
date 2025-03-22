@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>My Personal Portfolio</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
-    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Header Section -->
     <div class="header">
         <div class="container">
+            <!-- Navigation Bar -->
             <nav>
                 <h2>PORTFOLIO</h2>
                 <ul id="sidemenu">
@@ -28,9 +29,13 @@
                     <li><a href="#contact">Contact</a></li>
                     <i class="fa-solid fa-xmark" id="closemenu"></i>
                 </ul>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i> <!-- Use "fas" for solid icons -->
+                </div>
                 <i class="fa-solid fa-bars" id="openmenu"></i>
             </nav>
 
+            <!-- Intro Section -->
             <div class="intro">
                 <div class="image">
                     <img src="images/my_logo.jpg" alt="My Logo">
@@ -53,9 +58,7 @@
         </div>
     </div>
 
-
-
-    <!-- ......... About Section ........ -->
+    <!-- About Section -->
     <div id="about">
         <div class="container">
             <div class="row">
@@ -86,55 +89,39 @@
         </div>
     </div>
 
-    <!-- ............Experience Section............. -->
+    <!-- Experience Section -->
     <div id="experience">
         <div class="container">
             <div class="tab-title">
-                <button id="experience-btn">My Experience</button>
+                <button id="experience-btn" class="active-tab">My Experience</button>
                 <button id="education-btn">Education</button>
             </div>
 
-            <div class="tab-content" id="experience-tab">
+            <div class="tab-content active-tab" id="experience-tab">
                 <ul>
                     <li><span>March 2022 to Present</span> <br> Senior Web Developer | XYZ Company Pvt. Ltd | Los,
                         Maharashtra</li>
-
                     <li><span>March 2022 to Present</span> <br> Senior Web Developer | XYZ Company Pvt. Ltd | Los,
                         Maharashtra</li>
-
                     <li><span>March 2022 to Present</span> <br> Senior Web Developer | XYZ Company Pvt. Ltd | Los,
                         Maharashtra</li>
-
                     <li><span>March 2022 to Present</span> <br> Senior Web Developer | XYZ Company Pvt. Ltd | Los,
                         Maharashtra</li>
                 </ul>
-
             </div>
 
             <div class="tab-content" id="education-tab">
                 <ul>
-                    <li><span>2017-2019</span> <br> M.Tech | XYZ Company Pvt. Ltd | Los,
-                        Maharashtra</li>
-
-                    <li><span>2023-2024</span> <br> Web Developer | XYZ Company Pvt. Ltd | Los,
-                        Maharashtra</li>
-
-                    <li><span>2012</span> <br> Intermediate | Science Stream | 80%
-                        Maharashtra</li>
-
-                    <li><span>2010</span> <br> Matriculation | XYZ Company Pvt. Ltd | Los,
-                        Maharashtra</li>
+                    <li><span>2017-2019</span> <br> M.Tech | XYZ Company Pvt. Ltd | Los, Maharashtra</li>
+                    <li><span>2023-2024</span> <br> Web Developer | XYZ Company Pvt. Ltd | Los, Maharashtra</li>
+                    <li><span>2012</span> <br> Intermediate | Science Stream | 80% Maharashtra</li>
+                    <li><span>2010</span> <br> Matriculation | XYZ Company Pvt. Ltd | Los, Maharashtra</li>
                 </ul>
-
             </div>
         </div>
     </div>
 
-
-    <!-- ..........skills section.......... -->
-
-    </section>
-
+    <!-- Skills Section -->
     <section id="skills" class="skills">
         <h2>My Skills</h2>
         <p>Here are some of the technologies and tools I work with:</p>
@@ -177,14 +164,11 @@
         </div>
     </section>
 
-
-
-    <!-- .........Project section............ -->
+    <!-- Projects Section -->
     <div id="portfolio">
         <div class="container">
             <h1 class="subtitle">MY LATEST PROJECTS</h1>
             <div class="work-list">
-
                 <div class="work">
                     <img src="images/project.webp" alt="Project 1">
                     <div class="layer">
@@ -220,7 +204,6 @@
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
-
             </div>
 
             <div class="btn">
@@ -229,9 +212,7 @@
         </div>
     </div>
 
-
-    <!-- .............contact section........... -->
-
+    <!-- Contact Section -->
     <div id="contact">
         <div class="container">
             <h1 class="subtitle">GET IN TOUCH</h1>
@@ -259,11 +240,6 @@
                         <input type="text" name="name" placeholder="Enter Your Name" required>
                         <input type="email" name="email" placeholder="Enter Your Email" required>
                         <textarea name="message" placeholder="Enter Your Message"></textarea>
-
-                        <!-- Google reCAPTCHA
-                        <div class="g-recaptcha" data-sitekey="6LcvlPwqAAAAADUtVAXyrypMsaaQnFDkimNzzPDo"></div>
-                        <br /> -->
-
                         <button type="submit" class="btn2">Submit Now</button>
                     </form>
                 </div>
@@ -271,14 +247,10 @@
         </div>
     </div>
 
-
-    <!-- ............footer section................ -->
-
+    <!-- Footer Section -->
     <div class="footer">
         <p>Copyright &copy; 2025, All right reserved by Rishabh Mishra</p>
     </div>
-
-
 
     <script src="script.js"></script>
 </body>

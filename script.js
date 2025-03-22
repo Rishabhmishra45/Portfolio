@@ -14,7 +14,12 @@ edBtn.onclick = function () {
 
 
 
-// .........scorlling Problem code......
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let navHeight = document.querySelector("nav").offsetHeight;
 
@@ -31,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
 
 
 
@@ -52,20 +56,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// // ..........recaptcha...........
-// document.getElementById("contact-form").addEventListener("submit", function(event) {
-//     event.preventDefault();  // Default form submit rokta hai
+// Theme Toggle Functionality
+const themeToggle = document.querySelector('.theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const body = document.body;
 
-//     var recaptchaResponse = grecaptcha.getResponse(); // reCAPTCHA response
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+}
 
-//     if (!recaptchaResponse) {
-//         alert("Please complete the reCAPTCHA verification.");
-//         return;
-//     }
-
-//     // Agar reCAPTCHA verify ho gaya toh success message dikhaye
-//     alert("Form submitted successfully! ✅");
-
-//     // ✅ Backend ke liye form submit karna ho toh yahan AJAX/FETCH API use karo
-//     this.submit(); // Form submit karega agar backend linked ho
-// });
+themeToggle.addEventListener('click', () => {
+    if (body.getAttribute('data-theme') === 'dark') {
+        body.setAttribute('data-theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+    }
+});
