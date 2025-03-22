@@ -14,6 +14,19 @@ edBtn.onclick = function () {
 
 
 
+// Mobile Menu Toggle Functionality
+const openMenu = document.getElementById('openmenu');
+const closeMenu = document.getElementById('closemenu');
+const sideMenu = document.getElementById('sidemenu');
+
+openMenu.addEventListener('click', () => {
+    sideMenu.classList.add('active'); // Show menu
+});
+
+closeMenu.addEventListener('click', () => {
+    sideMenu.classList.remove('active'); // Hide menu
+});
+
 
 
 
