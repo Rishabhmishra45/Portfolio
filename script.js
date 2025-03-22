@@ -14,19 +14,6 @@ edBtn.onclick = function () {
 
 
 
-// Mobile Menu Toggle Functionality
-const openMenu = document.getElementById('openmenu');
-const closeMenu = document.getElementById('closemenu');
-const sideMenu = document.getElementById('sidemenu');
-
-openMenu.addEventListener('click', () => {
-    sideMenu.classList.add('active'); // Show menu
-});
-
-closeMenu.addEventListener('click', () => {
-    sideMenu.classList.remove('active'); // Hide menu
-});
-
 
 
 
@@ -94,5 +81,45 @@ themeToggle.addEventListener('click', () => {
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
         localStorage.setItem('theme', 'dark');
+    }
+});
+
+
+
+
+
+
+// Certificate Section Interactivity (Optional)
+const certificates = document.querySelectorAll('.certificate');
+
+certificates.forEach(certificate => {
+    certificate.addEventListener('click', () => {
+        alert('Certificate clicked!');
+        // Add more functionality here, like opening a modal
+    });
+});
+
+
+
+
+
+// ...........back to top section................
+window.addEventListener('scroll', function () {
+    const backToTopButton = document.querySelector('.back-to-top');
+    if (window.scrollY > 100) { // Show button after scrolling 100px
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+
+
+window.addEventListener('scroll', function () {
+    const backToTopButton = document.querySelector('.back-to-top');
+    if (window.scrollY > 100) {
+        backToTopButton.classList.add('visible');
+    } else {
+        backToTopButton.classList.remove('visible');
     }
 });

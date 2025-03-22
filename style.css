@@ -47,7 +47,8 @@ body {
 }
 
 /* Fix scrolling offset issue */
-section, div[id] {
+section,
+div[id] {
     scroll-margin-top: 80px;
 }
 
@@ -82,7 +83,8 @@ nav ul {
     display: flex;
     align-items: center;
     list-style: none;
-    margin-left: auto; /* Move links to the right */
+    margin-left: auto;
+    /* Move links to the right */
 }
 
 nav ul li {
@@ -491,6 +493,126 @@ nav .fa-solid {
     background: #4a90e2;
 }
 
+
+
+/* Certificate Section */
+#certificates {
+    padding: 50px 0;
+    background: var(--card-background);
+    text-align: center;
+}
+
+.certificate-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 certificates in one row */
+    gap: 20px;
+    /* Space between certificates */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.certificate {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px var(--card-shadow);
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+    /* Ensure consistent height */
+}
+
+.certificate:hover {
+    transform: scale(1.05);
+    z-index: 1;
+    /* Ensure the hovered item is above others */
+}
+
+.certificate img {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for all certificates */
+    object-fit: cover;
+    /* Ensures the image covers the area */
+    display: block;
+}
+
+.certificate .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(27, 96, 153, 0.9), rgba(123, 229, 236, 0.9));
+    /* Same as project section */
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.certificate:hover .layer {
+    opacity: 1;
+    visibility: visible;
+}
+
+.certificate .layer h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.certificate .layer a {
+    background: #ffcc00;
+    /* Yellow background */
+    color: #000000;
+    /* Black text */
+    padding: 10px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    display: inline-block;
+    margin-top: 10px;
+    border: 2px solid #ffcc00;
+    /* Yellow border */
+    font-size: 16px;
+    text-align: center;
+    width: 180px;
+    /* Fixed width for the button */
+}
+
+.certificate .layer a:hover {
+    background: #000000;
+    /* Black background on hover */
+    color: #ffcc00;
+    /* Yellow text on hover */
+    border-color: #000000;
+    /* Black border on hover */
+}
+
+/* Responsive Design for Certificates */
+@media (max-width: 768px) {
+    .certificate-list {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 certificates in one row for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-list {
+        grid-template-columns: 1fr;
+        /* 1 certificate in one row for mobile */
+    }
+}
+
+
 /* Contact Section */
 #contact {
     background: var(--contact-background);
@@ -571,6 +693,31 @@ form .btn2 {
     font-weight: 800;
     cursor: pointer;
 }
+
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #d37e0f;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    opacity: 0;
+    /* Initially hidden */
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
 
 /* Footer Section */
 .footer {
