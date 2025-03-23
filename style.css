@@ -818,3 +818,127 @@ form .btn2 {
         text-align: center;
     }
 }
+
+
+
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        padding: 12px 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 250px;
+        height: 100vh;
+        background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+        position: fixed;
+        top: 0;
+        right: -250px;
+        padding-top: 60px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        color: var(--text-color);
+    }
+
+    nav .fa-solid {
+        display: block;
+    }
+
+    #closemenu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text {
+        margin-left: 0;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        max-width: 100%;
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .certificate-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Media Queries for Skills Section */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+
+    .skill-card {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .skill-logo {
+        width: 60px; /* Reduce icon size for mobile */
+        height: 60px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.2rem; /* Reduce font size for mobile */
+    }
+
+    .skill-card p {
+        font-size: 0.9rem; /* Reduce font size for mobile */
+    }
+}
