@@ -14,26 +14,24 @@ edBtn.onclick = function () {
 
 
 
-// JavaScript to toggle sidebar
-const openMenu = document.getElementById("openmenu");
-const closeMenu = document.getElementById("closemenu");
-const sideMenu = document.getElementById("sidemenu");
+// Sidebar Toggle Functionality
+const sidemenu = document.getElementById("sidemenu");
+const openmenu = document.getElementById("openmenu");
+const closemenu = document.getElementById("closemenu");
 
-openMenu.addEventListener("click", () => {
-    sideMenu.classList.add("active");
+openmenu.addEventListener("click", () => {
+    sidemenu.classList.add("active");
 });
 
-closeMenu.addEventListener("click", () => {
-    sideMenu.classList.remove("active");
+closemenu.addEventListener("click", () => {
+    sidemenu.classList.remove("active");
 });
 
-// Sidebar ke links par click karne par sidebar close ho jaye
-const menuLinks = document.querySelectorAll("#sidemenu a");
-
-menuLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        sideMenu.classList.remove("active");
-    });
+// Close sidebar when clicking outside
+document.addEventListener("click", (event) => {
+    if (!sidemenu.contains(event.target) && !openmenu.contains(event.target)) {
+        sidemenu.classList.remove("active");
+    }
 });
 
 
