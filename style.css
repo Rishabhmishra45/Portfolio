@@ -60,7 +60,7 @@ div[id] {
     padding-top: 80px;
 }
 
-/* Navigation Bar */
+/* Navbar Styling */
 nav {
     position: fixed;
     top: 0;
@@ -74,16 +74,12 @@ nav {
     z-index: 1000;
 }
 
-nav h2 {
-    color: var(--text-color);
-    font-size: 24px;
-}
-
 nav ul {
     display: flex;
     align-items: center;
     list-style: none;
     margin-left: auto;
+    flex-wrap: wrap; /* Allow links to wrap if needed */
 }
 
 nav ul li {
@@ -111,6 +107,31 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
+}
+
+/* Media Queries for Navbar */
+@media (max-width: 1024px) {
+    nav {
+        padding: 12px 20px; /* Reduce padding for smaller screens */
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Reduce margin between links */
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide links on mobile */
+    }
+
+    #openmenu, #closemenu {
+        display: block; /* Show menu icons */
+    }
 }
 
 /* Theme Toggle Button */
