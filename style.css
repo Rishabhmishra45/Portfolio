@@ -139,6 +139,7 @@ nav .fa-solid {
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-left: 500px;
 }
 
 #openmenu, #closemenu {
@@ -216,7 +217,7 @@ nav .fa-solid {
     height: auto;
     border-radius: 160px;
     margin-top: 40px;
-    margin-right: 25px;
+    margin-right: 30px;
 }
 
 .header-text {

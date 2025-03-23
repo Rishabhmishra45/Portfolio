@@ -106,18 +106,6 @@ themeToggle.addEventListener('click', () => {
 
 
 
-// Certificate Section Interactivity (Optional)
-const certificates = document.querySelectorAll('.certificate');
-
-certificates.forEach(certificate => {
-    certificate.addEventListener('click', () => {
-        alert('Certificate clicked!');
-        // Add more functionality here, like opening a modal
-    });
-});
-
-
-
 
 
 // ...........back to top section................
