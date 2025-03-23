@@ -60,7 +60,7 @@ div[id] {
     padding-top: 80px;
 }
 
-/* Navbar Styling */
+/* Navigation Bar */
 nav {
     position: fixed;
     top: 0;
@@ -74,12 +74,16 @@ nav {
     z-index: 1000;
 }
 
+nav h2 {
+    color: var(--text-color);
+    font-size: 24px;
+}
+
 nav ul {
     display: flex;
     align-items: center;
     list-style: none;
     margin-left: auto;
-    flex-wrap: wrap; /* Allow links to wrap if needed */
 }
 
 nav ul li {
@@ -107,31 +111,6 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
-}
-
-/* Media Queries for Navbar */
-@media (max-width: 1024px) {
-    nav {
-        padding: 12px 20px; /* Reduce padding for smaller screens */
-    }
-
-    nav ul li {
-        margin: 0 10px; /* Reduce margin between links */
-    }
-
-    nav ul li a {
-        font-size: 14px; /* Reduce font size for smaller screens */
-    }
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide links on mobile */
-    }
-
-    #openmenu, #closemenu {
-        display: block; /* Show menu icons */
-    }
 }
 
 /* Theme Toggle Button */
@@ -934,32 +913,3 @@ form .btn2 {
 
 
 
-/* Media Queries for Skills Section */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .skills-grid {
-        grid-template-columns: 1fr; /* 1 column for mobile */
-    }
-
-    .skill-card {
-        padding: 15px; /* Reduce padding for smaller screens */
-    }
-
-    .skill-logo {
-        width: 60px; /* Reduce icon size for mobile */
-        height: 60px;
-    }
-
-    .skill-card h3 {
-        font-size: 1.2rem; /* Reduce font size for mobile */
-    }
-
-    .skill-card p {
-        font-size: 0.9rem; /* Reduce font size for mobile */
-    }
-}
