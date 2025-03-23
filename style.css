@@ -133,6 +133,50 @@ nav .fa-solid {
     cursor: pointer;
 }
 
+/* Sidebar Menu Styling */
+#sidemenu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#openmenu, #closemenu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Mobile View Styling */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -250px; /* Sidebar starts off-screen */
+        width: 250px;
+        height: 100vh;
+        background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+        padding-top: 60px;
+        transition: right 0.3s ease;
+    }
+
+    nav ul.active {
+        right: 0; /* Sidebar slides in */
+    }
+
+    #openmenu, #closemenu {
+        display: block;
+    }
+
+    #closemenu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
 /* Adjusting padding for other content */
 .intro,
 #about,
@@ -172,6 +216,7 @@ nav .fa-solid {
     height: auto;
     border-radius: 160px;
     margin-top: 40px;
+    margin-right: 15px;
 }
 
 .header-text {
