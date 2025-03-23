@@ -84,7 +84,6 @@ nav ul {
     align-items: center;
     list-style: none;
     margin-left: auto;
-    /* Move links to the right */
 }
 
 nav ul li {
@@ -155,7 +154,7 @@ nav .fa-solid {
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: -250px; /* Sidebar starts off-screen */
+        right: -250px;
         width: 250px;
         height: 100vh;
         background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
@@ -164,7 +163,7 @@ nav .fa-solid {
     }
 
     nav ul.active {
-        right: 0; /* Sidebar slides in */
+        right: 0;
     }
 
     #openmenu, #closemenu {
