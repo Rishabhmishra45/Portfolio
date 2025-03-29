@@ -456,6 +456,7 @@ nav .fa-solid {
     width: 100%;
     height: auto;
     display: block;
+    height: 190px;
 }
 
 .layer {
@@ -727,13 +728,17 @@ form .btn2 {
     bottom: 20px;
     right: 20px;
     background: #d37e0f;
-    color: white;
-    padding: 10px;
+    color: rgb(16, 16, 16);
+    padding: 17px;
     border-radius: 50%;
     text-decoration: none;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.back-to-top:hover {
+    background: linear-gradient(120deg, rgba(27, 96, 153, 0.9), rgba(123, 229, 236, 0.9));
+    border: 2px solid black;
 }
 
 .back-to-top.visible {
