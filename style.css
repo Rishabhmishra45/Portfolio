@@ -141,7 +141,8 @@ nav .fa-solid {
     margin-left: 500px;
 }
 
-#openmenu, #closemenu {
+#openmenu,
+#closemenu {
     display: none;
     font-size: 24px;
     cursor: pointer;
@@ -166,7 +167,8 @@ nav .fa-solid {
         right: 0;
     }
 
-    #openmenu, #closemenu {
+    #openmenu,
+    #closemenu {
         display: block;
     }
 
@@ -217,7 +219,16 @@ nav .fa-solid {
     border-radius: 160px;
     margin-top: 40px;
     margin-right: 30px;
+    animation: floating 2.5s ease-in-out infinite;
 }
+
+/* Floating animation */
+@keyframes floating {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
 
 .header-text {
     flex: 2;
@@ -253,6 +264,8 @@ nav .fa-solid {
 .btn {
     margin-top: 40px;
 }
+
+
 
 .btn a {
     text-decoration: none;
@@ -736,6 +749,7 @@ form .btn2 {
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
+
 .back-to-top:hover {
     background: linear-gradient(120deg, rgba(27, 96, 153, 0.9), rgba(123, 229, 236, 0.9));
     border: 2px solid black;
@@ -908,13 +922,3 @@ form .btn2 {
         grid-template-columns: 1fr;
     }
 }
-
-
-
-
-
-
-
-
-
-
