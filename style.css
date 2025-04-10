@@ -205,6 +205,30 @@ nav .fa-solid {
     box-shadow: 0 5px 10px var(--card-shadow);
 }
 
+
+/* For colored letters */
+.highlight-orange {
+    color: orange;
+    font-weight: bold;
+}
+
+.highlight-blue {
+    color: #00bfff;
+    font-weight: bold;
+}
+
+#typed-text {
+    font-weight: 5000;
+    border-right: 2px solid orange;
+    white-space: nowrap;
+    overflow: hidden;
+    /* color: white; */
+}
+
+
+
+
+
 .intro .image {
     flex: 1;
     min-width: 300px;

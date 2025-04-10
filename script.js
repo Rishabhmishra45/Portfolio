@@ -104,6 +104,78 @@ themeToggle.addEventListener('click', () => {
 
 
 
+//text animation
+
+const roles = [
+    {
+        text: "Web Developer &",
+        highlights: {
+            0: "highlight-orange", // W
+            4: "highlight-orange"  // D
+        }
+    },
+    {
+        text: "College Student.",
+        highlights: {
+            0: "highlight-blue",   // C
+            8: "highlight-blue"    // S
+        }
+    }
+];
+
+const typedText = document.getElementById("typed-text");
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    const role = roles[roleIndex];
+    const fullText = role.text;
+    const highlights = role.highlights;
+
+    if (!isDeleting) {
+        charIndex++;
+    } else {
+        charIndex--;
+    }
+
+    let visibleText = fullText.substring(0, charIndex);
+    typedText.innerHTML = applyHighlights(visibleText, highlights);
+
+    let delay = isDeleting ? 50 : 120;
+
+    if (!isDeleting && charIndex === fullText.length) {
+        delay = 2000;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        delay = 500;
+    }
+
+    setTimeout(typeEffect, delay);
+}
+
+function applyHighlights(text, highlights) {
+    let result = "";
+    for (let i = 0; i < text.length; i++) {
+        if (highlights[i]) {
+            result += `<span class="${highlights[i]}">${text[i]}</span>`;
+        } else {
+            result += text[i];
+        }
+    }
+    return result;
+}
+
+typeEffect();
+
+
+
+
+
+
+
 
 
 
