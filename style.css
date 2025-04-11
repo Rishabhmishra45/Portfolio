@@ -240,7 +240,7 @@ nav .fa-solid {
     border-radius: 160px;
     margin-top: 40px;
     margin-right: 30px;
-    animation: floating 2.5s ease-in-out infinite;
+    /* animation: floating 2.5s ease-in-out infinite; */
 }
 
 /* Floating animation */
@@ -295,6 +295,7 @@ nav .fa-solid {
 .header-text .btn {
     margin: 20px 0;
     display: inline-block;
+    animation: floating 2.5s ease-in-out infinite;
 }
 
 /* See More Button */
@@ -308,6 +309,7 @@ nav .fa-solid {
 .contact-left .btn {
     margin: 25px 0;
     display: inline-block;
+    animation: floating 2.5s ease-in-out infinite;
 }
 
 /* Common Button Style */
