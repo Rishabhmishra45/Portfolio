@@ -58,6 +58,7 @@ div[id] {
     min-height: 550px;
     background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
     padding-top: 80px;
+    padding-bottom: 50px;
 }
 
 /* Navigation Bar */
@@ -194,7 +195,7 @@ nav .fa-solid {
     width: 90%;
     max-width: 1200px;
     background: var(--card-background);
-    padding: 12px;
+    padding: 0px;
     margin: 0 auto;
     border-radius: 6px;
     color: var(--text-color);
@@ -225,10 +226,6 @@ nav .fa-solid {
     /* color: white; */
 }
 
-
-
-
-
 .intro .image {
     flex: 1;
     min-width: 300px;
@@ -248,9 +245,17 @@ nav .fa-solid {
 
 /* Floating animation */
 @keyframes floating {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 
@@ -285,19 +290,88 @@ nav .fa-solid {
     margin-right: 10px;
 }
 
-.btn {
-    margin-top: 40px;
+/* Button Styles - UPDATED */
+/* Download CV Button */
+.header-text .btn {
+    margin: 20px 0;
+    display: inline-block;
 }
 
+/* See More Button */
+#portfolio .btn {
+    margin: 40px auto 20px;
+    display: flex;
+    justify-content: center;
+}
 
+/* Hire Me Button */
+.contact-left .btn {
+    margin: 25px 0;
+    display: inline-block;
+}
 
+/* Common Button Style */
 .btn a {
+    display: inline-block;
+    position: relative;
+    padding: 15px 40px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
     text-decoration: none;
-    color: var(--text-color);
-    background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
-    padding: 9px 14px;
-    border-radius: 8px;
-    border: 1px solid orange;
+    border-radius: 32px;
+    border: 2px solid skyblue;
+    background: linear-gradient(120deg, #ff00cc, #3333ff);
+    box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Glowing outer effect */
+.btn a::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #FF0000, #FF7300, #FFFB00, #48FF00, #00FFD5, #002BFF, #FF00C8, #FF0000);
+    background-size: 600%;
+    filter: blur(8px);
+    z-index: -1;
+    border-radius: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    animation: glowing 20s linear infinite;
+}
+
+.btn a:hover::before {
+    opacity: 1;
+}
+
+.btn a:hover {
+    transform: scale(1.05);
+}
+
+/* Click active effect */
+.btn a:active {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Keyframes for glowing effect */
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
 /* About Section */
@@ -557,7 +631,7 @@ nav .fa-solid {
     color: #ffffff;
 }
 
-.btn2 {
+.btn2{
     margin-top: 30px;
     display: flex;
     justify-content: center;
@@ -565,16 +639,16 @@ nav .fa-solid {
 
 .btn a {
     text-decoration: none;
-    background: #d37e0f;
+    background: linear-gradient(120deg, #ff00cc, #3333ff);
     color: white;
     padding: 12px 25px;
-    border-radius: 5px;
+    border-radius: 32px;
     font-weight: bold;
     transition: background 0.3s ease-in-out;
 }
 
 .btn a:hover {
-    background: #4a90e2;
+    background: linear-gradient(120deg, #ff00cc, #3333ff);
 }
 
 /* Certificate Section */
@@ -861,12 +935,6 @@ form .btn2 {
         text-align: center;
     }
 }
-
-
-
-
-
-
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
