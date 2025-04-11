@@ -833,29 +833,76 @@ form .btn2 {
     cursor: pointer;
 }
 
-/* Back-to-Top Button */
+/* Back-to-Top Button - UPDATED */
+/* Back-to-Top Button - FINAL FIXED VERSION */
 .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #d37e0f;
-    color: rgb(16, 16, 16);
-    padding: 17px;
+    color: white;
+    padding: 0;
+    margin: 0;
     border-radius: 50%;
     text-decoration: none;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    border: 2px solid skyblue;
+    background: linear-gradient(120deg, #ff00cc, #3333ff);
+    box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
+    z-index: 1000; /* Increased z-index */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 26px; /* Slightly larger */
+    font-weight: bold;
+    line-height: 50px; /* Matches height */
+    text-align: center;
+}
+
+.back-to-top::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #FF0000, #FF7300, #FFFB00, #48FF00, #00FFD5, #002BFF, #FF00C8, #FF0000);
+    background-size: 600%;
+    filter: blur(8px);
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: glowing 20s linear infinite;
 }
 
 .back-to-top:hover {
-    background: linear-gradient(120deg, rgba(27, 96, 153, 0.9), rgba(123, 229, 236, 0.9));
-    border: 2px solid black;
+    transform: scale(1.1);
+}
+
+.back-to-top:hover::before {
+    opacity: 1;
 }
 
 .back-to-top.visible {
     opacity: 1;
     visibility: visible;
+}
+
+/* Keyframes for glowing effect (already in your CSS) */
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
 
 /* Footer Section */
