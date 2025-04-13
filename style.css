@@ -1212,4 +1212,27 @@ form .btn2 {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
+
+    .subtitle {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: auto;
+        margin-top: -30px;
+        color: var(--text-color);
+    }
+
+    .contact-left p {
+        margin: 5px auto;
+        align-items: center;
+        font-size: 1.0em;
+    }
+
+    .contact-left .btn {
+        margin: auto 0;
+        display: inline-block;
+        align-items: center;
+        animation: floating 2.5s ease-in-out infinite;
+    }
+
+
 }
