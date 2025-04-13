@@ -171,15 +171,6 @@ function applyHighlights(text, highlights) {
 typeEffect();
 
 
-
-
-
-
-
-
-
-
-
 // ...........back to top section................
 window.addEventListener('scroll', function () {
     const backToTopButton = document.querySelector('.back-to-top');
@@ -199,4 +190,121 @@ window.addEventListener('scroll', function () {
     } else {
         backToTopButton.classList.remove('visible');
     }
+});
+
+
+
+
+
+
+
+// Skills Marquee Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const marquee = document.querySelector('.marquee');
+    const skillCards = document.querySelectorAll('.skill-card');
+    const marqueeContainer = document.querySelector('.marquee-container');
+    
+    // Function to initialize marquee
+    function initMarquee() {
+        // Calculate total width of one set of cards
+        let totalWidth = 0;
+        skillCards.forEach(card => {
+            totalWidth += card.offsetWidth + (window.innerWidth <= 480 ? 5 : 10);
+        });
+        
+        // Set container width
+        marqueeContainer.style.width = '100%';
+        marquee.style.width = totalWidth + 'px';
+        
+        // Adjust animation duration based on screen size
+        const animationDuration = window.innerWidth <= 480 ? 20 : 30;
+        
+        // Remove existing animation
+        marquee.style.animation = 'none';
+        void marquee.offsetWidth; // Trigger reflow
+        
+        // Apply new animation
+        marquee.style.animation = `marquee ${animationDuration}s linear infinite`;
+        
+        // Update keyframes
+        updateKeyframes();
+    }
+    
+    // Function to update keyframes
+    function updateKeyframes() {
+        const gapValue = window.innerWidth <= 480 ? 5 : 10;
+        const styleSheet = document.styleSheets[0];
+        
+        // Remove existing marquee keyframes if they exist
+        const existingIndex = Array.from(styleSheet.cssRules).findIndex(rule => 
+            rule.name === 'marquee'
+        );
+        if (existingIndex !== -1) {
+            styleSheet.deleteRule(existingIndex);
+        }
+        
+        // Add new keyframes
+        styleSheet.insertRule(`
+            @keyframes marquee {
+                0% {
+                    transform: translateX(100%);
+                }
+                100% {
+                    transform: translateX(calc(-100% - ${gapValue}px));
+                }
+            }
+        `, styleSheet.cssRules.length);
+    }
+    
+    // Initialize on load
+    initMarquee();
+    
+    // Make responsive on window resize
+    window.addEventListener('resize', function() {
+        initMarquee();
+    });
+    
+    // Perfect loop for mobile - reset when last card is about to disappear
+    marquee.addEventListener('animationiteration', function() {
+        if (window.innerWidth <= 480) {
+            // Force reset to starting position
+            marquee.style.animation = 'none';
+            void marquee.offsetWidth;
+            initMarquee();
+        }
+    });
+    
+    // Interaction handlers
+    marquee.addEventListener('mouseenter', () => {
+        marquee.style.animationPlayState = 'paused';
+    });
+    
+    marquee.addEventListener('mouseleave', () => {
+        marquee.style.animationPlayState = 'running';
+    });
+    
+    skillCards.forEach(card => {
+        card.addEventListener('click', () => {
+            marquee.style.animationPlayState = marquee.style.animationPlayState === 'paused' 
+                ? 'running' 
+                : 'paused';
+        });
+    });
+    
+    // Touch controls
+    let touchTimer;
+    marquee.addEventListener('touchstart', (e) => {
+        if (e.target.closest('.skill-card') || e.target === marquee) {
+            marquee.style.animationPlayState = 'paused';
+            // Auto-resume after 3 seconds if not manually resumed
+            touchTimer = setTimeout(() => {
+                marquee.style.animationPlayState = 'running';
+            }, 3000);
+        }
+    });
+    
+    marquee.addEventListener('touchend', () => {
+        clearTimeout(touchTimer);
+        marquee.style.animationPlayState = 'running';
+    });
 });
