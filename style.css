@@ -633,7 +633,7 @@ nav .fa-solid {
     color: #ffffff;
 }
 
-.btn2{
+.btn2 {
     margin-top: 30px;
     display: flex;
     justify-content: center;
@@ -851,16 +851,19 @@ form .btn2 {
     border: 2px solid skyblue;
     background: linear-gradient(120deg, #ff00cc, #3333ff);
     box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
-    z-index: 1000; /* Increased z-index */
+    z-index: 1000;
+    /* Increased z-index */
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50px;
     height: 50px;
-    font-size: 26px; /* Slightly larger */
+    font-size: 26px;
+    /* Slightly larger */
     font-weight: bold;
-    line-height: 50px; /* Matches height */
+    line-height: 50px;
+    /* Matches height */
     text-align: center;
 }
 
@@ -899,9 +902,11 @@ form .btn2 {
     0% {
         background-position: 0 0;
     }
+
     50% {
         background-position: 400% 0;
     }
+
     100% {
         background-position: 0 0;
     }
@@ -1062,4 +1067,67 @@ form .btn2 {
     .certificate-list {
         grid-template-columns: 1fr;
     }
+
+    .header-text h1 {
+        font-size: 27px;
+        margin-top: -5px;
+        margin-left: 20px;
+        padding: 10px 0px;
+    }
+
+    .intro .image img {
+        width: 50%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 160px;
+        margin-top: 40px;
+        margin-right: 25px;
+        margin-left: 22px;
+        /* animation: floating 2.5s ease-in-out infinite; */
+    }
+
+    h3 {
+        margin-left: 20px;
+        margin-top: -30px;
+        font-size: 17px;
+    }
+
+    p {
+        margin-left: 20px;
+        font-size: 10px;
+    }
+
+    .personal-info {
+        margin: 20px 23px;
+        text-align: left;
+    }
+
+    .about-col-1 h1 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        margin-top: -150px;
+        text-align: center;
+    }
+    
+    .about-col-1 p {
+        position: relative;
+        font-size: 12px;
+        line-height: 1.7;
+        text-align: center;
+        justify-content: space-between;
+        margin-top: 20px; /* Add a little space between image and paragraph */
+    }
+    
+    .animated-image {
+        position: relative;
+        top: 0px; /* Adjust the position of the image between h1 and p */
+        left: 50%; /* Horizontally center the image */
+        transform: translateX(-50%); /* Corrects the centering */
+        width: 50%;
+        overflow: hidden;
+        box-shadow: none;
+    }
+    
+    
 }
