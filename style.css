@@ -859,6 +859,13 @@ nav .fa-solid {
     text-align: left;
 }
 
+.contact-left .btn {
+    margin: auto 0;
+    display: inline-block;
+    align-items: center;
+    animation: floating 2.5s ease-in-out infinite;
+}
+
 .contact-left p {
     margin: 10px 0;
 }
@@ -1212,12 +1219,20 @@ form .btn2 {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
+    /* Certificate Section */
+    .subtitle {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: var(--text-color);
+    }
 
+    /* Get in touch */
     .subtitle {
         font-size: 2em;
         font-weight: bold;
         margin-bottom: auto;
-        margin-top: -30px;
+        margin-top: 0px;
         color: var(--text-color);
     }
 
