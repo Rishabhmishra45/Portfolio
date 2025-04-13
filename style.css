@@ -1098,36 +1098,97 @@ form .btn2 {
     }
 
     .personal-info {
-        margin: 20px 23px;
+        margin: 0 23px;
         text-align: left;
     }
 
+    #about {
+        padding: 30px 0;
+    }
+
     .about-col-1 h1 {
-        font-size: 30px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        margin-top: -150px;
+        font-size: 24px;
+        margin-top: 0px;
+        margin-bottom: 0px;
         text-align: center;
     }
-    
+
     .about-col-1 p {
-        position: relative;
-        font-size: 12px;
-        line-height: 1.7;
+        font-size: 14px;
+        line-height: 1.6;
         text-align: center;
-        justify-content: space-between;
-        margin-top: 20px; /* Add a little space between image and paragraph */
+        margin-top: 20px;
+        /* Space after image */
     }
-    
+
+    .about-col-2 {
+        order: -1;
+        /* Moves image above text */
+        margin-bottom: 20px;
+    }
+
     .animated-image {
-        position: relative;
-        top: 0px; /* Adjust the position of the image between h1 and p */
-        left: 50%; /* Horizontally center the image */
-        transform: translateX(-50%); /* Corrects the centering */
-        width: 50%;
-        overflow: hidden;
-        box-shadow: none;
+        width: 60%;
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    
-    
+
+    /* Skills Section
+    .skills {
+        padding: 40px 10px;
+    }
+
+    .skills h2 {
+        font-size: 1.8rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .skill-card {
+        padding: 10px;
+    }
+    .skill-card h3 {
+        padding: 20px;
+        margin: 0 auto;
+        margin-top: -20px;
+    }
+    .skill-card p {
+        padding: 20px;
+        margin: 0 auto;
+        margin-top: -20px;
+    }
+
+    .skill-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* General Adjustments */
+    /* .header-text h1 {
+        font-size: 24px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .intro .image img {
+        width: 50%;
+        margin: 20px auto;
+    }
+
+    .personal-info {
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    .personal-info li {
+        font-size: 14px;
+    } */ 
+
+
 }
