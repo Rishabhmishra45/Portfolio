@@ -1227,6 +1227,10 @@ form .btn2 {
         color: var(--text-color);
     }
 
+    h1.subtitle {
+        margin-bottom: 20px;
+    }
+
     /* Get in touch */
     .subtitle {
         font-size: 2em;
