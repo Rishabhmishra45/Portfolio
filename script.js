@@ -308,3 +308,96 @@ document.addEventListener('DOMContentLoaded', function() {
         marquee.style.animationPlayState = 'running';
     });
 });
+
+
+
+
+
+
+
+// Enhanced Navbar for Tall Screens
+const nav = document.querySelector('nav');
+const navHeight = nav.offsetHeight;
+
+// Adjust scroll offset for tall screens
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    const additionalOffset = window.innerHeight > 2000 ? 120 : 80;
+    
+    window.scrollTo({
+      top: targetElement.offsetTop - navHeight - additionalOffset,
+      behavior: 'smooth'
+    });
+    
+    // Close mobile menu if open
+    sidemenu.classList.remove('active');
+  });
+});
+
+// Dynamic padding adjustment for header
+function adjustHeaderPadding() {
+  const header = document.querySelector('.header');
+  if (window.innerHeight > 2000) {
+    header.style.paddingTop = `${navHeight + 50}px`;
+  } else {
+    header.style.paddingTop = `${navHeight + 30}px`;
+  }
+}
+
+// Run on load and resize
+window.addEventListener('load', adjustHeaderPadding);
+window.addEventListener('resize', adjustHeaderPadding);
+
+// Enhanced menu item animations
+const menuItems = document.querySelectorAll('#sidemenu li');
+
+function animateMenuItems(show) {
+  menuItems.forEach((item, index) => {
+    if (show) {
+      item.style.transition = `all 0.4s ease ${index * 0.1}s`;
+      item.style.opacity = '1';
+      item.style.transform = 'translateX(0)';
+    } else {
+      item.style.transition = `all 0.3s ease ${index * 0.05}s`;
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(20px)';
+    }
+  });
+}
+
+openmenu.addEventListener('click', () => {
+  sidemenu.classList.add('active');
+  animateMenuItems(true);
+});
+
+closemenu.addEventListener('click', () => {
+  animateMenuItems(false);
+  setTimeout(() => {
+    sidemenu.classList.remove('active');
+  }, 300);
+});
+
+// Dynamic font sizing for very tall screens
+function adjustFontSizes() {
+  const html = document.documentElement;
+  if (window.innerHeight > 2400) {
+    html.style.fontSize = '110%';
+  } else if (window.innerHeight > 2000) {
+    html.style.fontSize = '105%';
+  } else {
+    html.style.fontSize = '100%';
+  }
+}
+
+window.addEventListener('resize', adjustFontSizes);
+window.addEventListener('load', adjustFontSizes);
+
+
+
+
+
+
+

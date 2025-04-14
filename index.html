@@ -374,14 +374,21 @@
                         <input type="text" name="name" placeholder="Enter Your Name" required>
                         <input type="email" name="email" placeholder="Enter Your Email" required>
                         <textarea name="message" placeholder="Enter Your Message"></textarea>
+
                         <!-- Hidden input for custom subject -->
                         <input type="hidden" name="_subject" value="My Portfolio">
+
+                        <!-- ✅ reCAPTCHA box here -->
+                        <div class="g-recaptcha" data-sitekey="6LdTPBgrAAAAAF8iDB_5DASyaPVBbvnZOjygWnvA"></div>
+
                         <button type="submit" class="btn2">Submit Now</button>
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
+
 
     <a href="#top" class="back-to-top">↑</a>
 
@@ -390,6 +397,9 @@
         <p>Copyright &copy; 2025, All right reserved by Rishabh Mishra</p>
     </div>
 
+
+    <!-- Google reCAPTCHA Script (add before closing </body> tag) -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
 </body>
 
